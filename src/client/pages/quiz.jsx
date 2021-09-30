@@ -25,7 +25,7 @@ export default function QuizPage() {
              </div>
         </div>
         <div class="row px-5">
-        <div class="col d-grid">
+          <div class="col d-grid">
             <button type="button" class="btn btn-dark p-3">Abandon</button>
           </div>
           <div class="col d-grid">

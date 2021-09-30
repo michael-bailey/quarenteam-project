@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { UserProvider } from '@auth0/nextjs-auth0';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../styles/about.css'
 
 // This is the main application fot the next app
 function MyApp({ Component, pageProps }) {

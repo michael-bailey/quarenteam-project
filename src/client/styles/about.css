@@ -1,0 +1,19 @@
+.home-score {
+    border-radius: 20px;
+}
+
+#score-1 {
+    background-color: rgb(210, 210, 210);
+}
+
+#score-2 {
+    background-color: rgb(140, 140, 140);
+}
+
+#score-3 {
+    background-color: rgb(70, 70, 70);
+}
+
+#score-4 {
+    background-color: rgb(0, 0, 0);
+}
