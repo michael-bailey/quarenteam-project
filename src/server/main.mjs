@@ -14,7 +14,9 @@ async function main() {
 
 	// add next as ui route handler
 	app.get(/^((?!\/api).)*$/, nextApp.getRequestHandler());
-
+	app.get(/^(\/api?.*)$/, (req, res) => {
+		res.send('Hello api');
+	});
 	// listen on port
 	app.listen(3000);
 }
