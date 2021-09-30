@@ -6,7 +6,7 @@ export default function AboutPage() {
 			<h1 class="text-center pt-5">Name</h1>
 
 			<h1 class="text-center pt-5">Quaranteam Quiz</h1>
-
+			<a class="text-center" href="/api/auth/logout">Logout</a>
 			<div class="row p-5">
           		<div class="col">
 					<div class="d-grid gap-2">
