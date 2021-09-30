@@ -10,22 +10,43 @@ export default function QuizPage() {
 
     let questions = new Array(12).fill("what is the point?")
     questions = questions.map((text, index) => {
-      return <Question number={index} text={text} select={() => {setQuestionNo(index)}} isSelected={index === questionNo}/>
+      return <Question number={index} text={text} isSelected={index === questionNo} next={() => setQuestionNo(next)}/>
     })
+
+    const previous = questionNo === 0 ? questions.length - 1 : questionNo - 1
+    const next = (questionNo + 1) % questions.length
     
     return (
 		<>
 			<Header user={user}/>
         <div class="row p-5">
+          <div class="col-1 d-flex justify-content-center">
+            <div class="align-self-center">
+              <button type="button" class="btn btn-dark rounded-circle" onClick={() => setQuestionNo(previous)}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
           <div class="col">
-            {questions[questionNo === 0 ? questions.length - 1 : questionNo - 1]}
+            {questions[previous]}
           </div>
             <div class="col">
               {questions[questionNo]}
             </div>
             <div class="col">
-              {questions[(questionNo + 1) % questions.length]}
-             </div>
+              {questions[next]}
+            </div>
+            <div class="col-1 d-flex justify-content-center">
+            <div class="align-self-center">
+              <button type="button" class="btn btn-primary rounded-circle" onClick={() => setQuestionNo(next)}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+              </button>
+            </div>
+            </div>
         </div>
         <div class="row px-5">
           <div class="col d-grid">
@@ -47,15 +68,15 @@ function Question(props) {
   const text = props.isSelected ? "text-center" : "text-secondary text-center"
 
   return (
-    <div class={"d-flex p-3 rounded rounded-3"+border+shadow} style={{height: "600px"}} onClick={props.select}>
+    <div class={"d-flex p-3 rounded rounded-3"+border+shadow} style={{height: "600px"}}>
       <div class="w-100 justify-content-center align-self-center">
         <h1 class={text}>{props.number + 1}.</h1>
         <p class={text}>{props.text}</p>
         <div class="d-grid gap-2">
-          <button type="button" class={props.isSelected ? "btn btn-outline-primary p-3" : "btn btn-outline-secondary p-3"} disabled={!props.isSelected}>Option 1</button>
-          <button type="button" class={props.isSelected ? "btn btn-outline-success p-3" : "btn btn-outline-secondary p-3"} disabled={!props.isSelected}>Option 2</button>
-          <button type="button" class={props.isSelected ? "btn btn-outline-danger p-3": "btn btn-outline-secondary p-3"} disabled={!props.isSelected}>Option 3</button>
-          <button type="button" class={props.isSelected ? "btn btn-outline-warning p-3": "btn btn-outline-secondary p-3"} disabled={!props.isSelected}>Option 4</button>
+          <button type="button" class={props.isSelected ? "btn btn-outline-primary p-3" : "btn btn-outline-secondary p-3"} disabled={!props.isSelected} onClick={props.next}>Option 1</button>
+          <button type="button" class={props.isSelected ? "btn btn-outline-success p-3" : "btn btn-outline-secondary p-3"} disabled={!props.isSelected} onClick={props.next}>Option 2</button>
+          <button type="button" class={props.isSelected ? "btn btn-outline-danger p-3": "btn btn-outline-secondary p-3"} disabled={!props.isSelected} onClick={props.next}>Option 3</button>
+          <button type="button" class={props.isSelected ? "btn btn-outline-warning p-3": "btn btn-outline-secondary p-3"} disabled={!props.isSelected} onClick={props.next}>Option 4</button>
         </div>
       </div>
     </div>
