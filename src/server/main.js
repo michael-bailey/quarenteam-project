@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser');
 const { Router } = require('express');
 const express = require('express');
 const next = require('next');
@@ -18,6 +19,10 @@ async function main() {
 
 	// express setup
 	const app = express();
+
+	// global middle ware
+	app.use(express.json());
+	app.use(express.urlencoded());
 
 	// ui route
 	app.get(/^((?!\/backend).)*$/, nextApp.getRequestHandler());
