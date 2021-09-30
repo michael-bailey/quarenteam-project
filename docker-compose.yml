@@ -1,0 +1,18 @@
+services:
+  quarenteam-db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'quarenteam'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'toor'
+    ports:
+      - '3306:3306'
+    expose:
+      - 3306
+    volumes:
+      - quarenteam-vol:/var/lib/mysql
+
+volumes:
+  quarenteam-vol:
