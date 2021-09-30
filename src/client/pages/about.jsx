@@ -1,12 +1,10 @@
 import Link from 'next/link';
+import Header from '../components/header'
 
 export default function AboutPage() {
 	return (
 		<>
-			<h1 class="text-center pt-5">Name</h1>
-
-			<h1 class="text-center pt-5">Quaranteam Quiz</h1>
-			<a class="text-center" href="/api/auth/logout">Logout</a>
+			<Header pageName="Profile"/>
 			<div class="row p-5">
           		<div class="col">
 					<div class="d-grid gap-2">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { height } from 'dom-helpers';
+import Header from '../components/header'
 
 export default function QuizPage() {
     const [questionNo, setQuestionNo] = useState(11);
@@ -12,8 +13,7 @@ export default function QuizPage() {
     
     return (
 		<>
-			<h1 class="text-center pt-5">Quiz Name</h1>
-      <a class="text-center" href="/api/auth/logout">Logout</a>
+			<Header pageName="Quiz"/>
         <div class="row p-5">
           <div class="col">
             {questions[questionNo === 0 ? questions.length - 1 : questionNo - 1]}

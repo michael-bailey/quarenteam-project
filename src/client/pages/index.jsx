@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useUser } from '@auth0/nextjs-auth0';
+import Header from '../components/header'
 
 export default function HomePage() {
+	const { user, error, isLoading } = useUser();
 	const [count, setCount] = useState(0);
-	return (
-		<>
-			<h1>Hello world</h1>
-			<a href="/api/auth/login" >Login</a>
-			<button
-				onClick={() => {
-					setCount(count + 1);
-				}}>
-				{count}
-			</button>
 
-			{/* the next link component should be used for navigation */}
-			<Link href='/about'>
-				<a>About</a>
-			</Link>
-		</>
-	);
-}
+	if (isLoading) return <div>Loading...</div>;
+	if (error) return <div>{error.message}</div>;
+
+	if (user) {
+		return (
+			<>
+		  		<Header/>
+				  <div class="h-100 row align-items-center">	
+		  				<h4 class="">Welcome {user.name}!</h4>
+				</div>
+		  	</>
+		);
+	  }
+	  return <a href="/api/auth/login">Login</a>;
+	};
