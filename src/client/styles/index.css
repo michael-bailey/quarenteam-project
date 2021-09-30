@@ -1,0 +1,24 @@
+h1 {
+    font-weight: bold; 
+}
+
+svg {
+    color: white;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus{
+    box-shadow:none;
+}
+
+.btn {
+    font-weight: bold;
+    color: white !important; 
+}
+
+.shadow-1 {
+    box-shadow: 6px 6px;
+}
+
+.shadow-2 {
+    box-shadow: 4px 4px #6e757c;
+}

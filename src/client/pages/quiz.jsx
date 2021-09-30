@@ -40,7 +40,7 @@ export default function QuizPage() {
             </div>
             <div class="col-1 d-flex justify-content-center">
             <div class="align-self-center">
-              <button type="button" class="btn btn-primary rounded-circle" onClick={() => setQuestionNo(next)}>
+              <button type="button" class="btn btn-dark rounded-circle" onClick={() => setQuestionNo(next)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg>
@@ -63,9 +63,10 @@ export default function QuizPage() {
 }
 
 function Question(props) {
-  const border = props.isSelected ? " border border-dark" : " border border-secondary"
-  const shadow = props.isSelected ? " shadow-lg" : ""
+  const border = " border " + (props.isSelected ? "border-dark" : "border-secondary")
+  const shadow = props.isSelected ? " shadow-1" : " shadow-2"
   const text = props.isSelected ? "text-center" : "text-secondary text-center"
+  const button = "btn p-3 "
 
   return (
     <div class={"d-flex p-3 rounded rounded-3"+border+shadow} style={{height: "600px"}}>
@@ -73,10 +74,10 @@ function Question(props) {
         <h1 class={text}>{props.number + 1}.</h1>
         <p class={text}>{props.text}</p>
         <div class="d-grid gap-2">
-          <button type="button" class={props.isSelected ? "btn btn-outline-primary p-3" : "btn btn-outline-secondary p-3"} disabled={!props.isSelected} onClick={props.next}>Option 1</button>
-          <button type="button" class={props.isSelected ? "btn btn-outline-success p-3" : "btn btn-outline-secondary p-3"} disabled={!props.isSelected} onClick={props.next}>Option 2</button>
-          <button type="button" class={props.isSelected ? "btn btn-outline-danger p-3": "btn btn-outline-secondary p-3"} disabled={!props.isSelected} onClick={props.next}>Option 3</button>
-          <button type="button" class={props.isSelected ? "btn btn-outline-warning p-3": "btn btn-outline-secondary p-3"} disabled={!props.isSelected} onClick={props.next}>Option 4</button>
+          <button type="button" class={button + (props.isSelected ? "btn-primary" : "btn-secondary")} disabled={!props.isSelected} onClick={props.next}>Option 1</button>
+          <button type="button" class={button + (props.isSelected ? "btn-success" : "btn-secondary")} disabled={!props.isSelected} onClick={props.next}>Option 2</button>
+          <button type="button" class={button + (props.isSelected ? "btn-danger" : "btn-secondary")} disabled={!props.isSelected} onClick={props.next}>Option 3</button>
+          <button type="button" class={button + (props.isSelected ? "btn-warning": "btn-secondary")} disabled={!props.isSelected} onClick={props.next}>Option 4</button>
         </div>
       </div>
     </div>
