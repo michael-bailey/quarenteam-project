@@ -6,7 +6,7 @@ export default function HomePage() {
 	return (
 		<>
 			<h1>Hello world</h1>
-			<a href="/api/auth/login" >Login</a>
+			<a href="/auth/login" >Login</a>
 			<button
 				onClick={() => {
 					setCount(count + 1);
