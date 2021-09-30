@@ -2,9 +2,9 @@
 	"name": "the-quarenteam",
 	"version": "0.0.0",
 	"description": "team quiz project",
-	"main": "src/main.mjs",
+	"main": "src/server/main.js",
 	"scripts": {
-		"start": "node ./src/server/main.mjs"
+		"start": "node ./src/server/main.js"
 	},
 	"keywords": [
 		"none"
@@ -19,6 +19,7 @@
 		"react": "^17.0.2",
 		"react-bootstrap": "^1.6.4",
 		"react-dom": "^17.0.2",
-		"sequelize": "^6.6.5"
+		"sequelize": "^6.6.5",
+		"sqlite3": "^5.0.2"
 	}
 }
