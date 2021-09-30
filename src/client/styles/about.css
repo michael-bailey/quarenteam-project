@@ -1,26 +1,19 @@
-.home-div {
-    background-color: rgb(221, 221, 221);
-    border-radius: 15px;
+.home-score {
+    border-radius: 20px;
 }
 
-.home-title {
-    padding-left: 20px;
-    padding-top: 20px;
+#score-1 {
+    background-color: rgb(210, 210, 210);
 }
 
-.all-scores {
-    padding: 10px;
+#score-2 {
+    background-color: rgb(140, 140, 140);
 }
 
-.scores {
-    background: black;
-    color: white;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 10px;
+#score-3 {
+    background-color: rgb(70, 70, 70);
 }
 
-.home-btn {
-    padding: 15px;
-    margin: 15px;
+#score-4 {
+    background-color: rgb(0, 0, 0);
 }

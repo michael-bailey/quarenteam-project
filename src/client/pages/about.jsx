@@ -3,34 +3,33 @@ import Link from 'next/link';
 export default function AboutPage() {
 	return (
 		<>
-			<h1 class="text-center">Eric</h1>
+			<h1 class="text-center pt-5">Name</h1>
 
-			<div class="d-flex justify-content-center">
-				<div class="col-4 home-div">
-					<div class="home-title">
-						<h1>Quaranteam Quiz</h1>
-					</div>
-					<div class="text-center all-scores">
-						<h6 class="scores">100%</h6>
-						<h6 class="scores">83%</h6>
-						<h6 class="scores">69%</h6>
-						<h6 class="scores">44%</h6>
-					</div>
-				</div>
+			<h1 class="text-center pt-5">Quaranteam Quiz</h1>
+
+			<div class="row p-5">
+          		<div class="col">
+					<div class="d-grid gap-2">
+          				<div id="score-1" class="text-center text-white p-3 home-score" >100%</div>
+						<div id="score-2" class="text-center text-white p-3 home-score" >100%</div>
+						<div id="score-3" class="text-center text-white p-3 home-score" >100%</div>
+						<div id="score-4" class="text-center text-white p-3 home-score" >100%</div>		
+        			</div>
+          		</div>
 			</div>
 
-			<div class="container">
-        		<div class="row">
-            		<div class="col-xs-12">
-                		<div  class="text-center">
-							<Link href='/' passHref>
-                    			<a class="btn btn-warning home-btn">Log Out</a>
-							</Link>
-                    		<a class="btn btn-dark home-btn">Take Quiz</a>
-                		</div>
-            		</div>
-        		</div>
-    		</div>
+			<div class="row px-5">
+          		<div class="col d-grid">
+				  	<Link href='/' passHref>
+            			<a type="button" class="btn btn-warning p-3">Log Out</a>
+					</Link>
+          		</div>
+          		<div class="col d-grid">
+				  	<Link href='/quiz' passHref>
+            			<a type="button" class="btn btn-dark p-3">Take Quiz</a>
+					</Link>
+          		</div>
+        	</div>
 		</>
 	);
 }
