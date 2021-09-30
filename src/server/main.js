@@ -2,6 +2,9 @@ const bodyParser = require('body-parser');
 const { Router } = require('express');
 const express = require('express');
 const next = require('next');
+const dotenv = require('dotenv');
+
+dotenv.config()
 
 const sequelize = require('./sequelize');
 const { UserRouter } = require('./User/User.route');
@@ -30,7 +33,7 @@ async function main() {
 	// api router
 	const ApiRouter = Router().use(UserRouter);
 
-	app.use(/^(\/backend?.*)$/, ApiRouter);
+	// app.use(/^(\/backend?.*)$/, ApiRouter);
 	app.listen(3000);
 }
 main();
