@@ -1,7 +1,10 @@
+const bodyParser = require('body-parser');
+const { Router } = require('express');
 const express = require('express');
 const next = require('next');
 
 const sequelize = require('./sequelize');
+const { UserRouter } = require('./User/User.route');
 
 async function main() {
 	// next js setup
@@ -16,10 +19,18 @@ async function main() {
 
 	// express setup
 	const app = express();
-	app.get(/^((?!\/api).)*$/, nextApp.getRequestHandler());
-	app.get(/^(\/api?.*)$/, (req, res) => {
-		res.send('Hello api');
-	});
+
+	// global middle ware
+	app.use(express.json());
+	app.use(express.urlencoded());
+
+	// ui route
+	app.get(/^((?!\/backend).)*$/, nextApp.getRequestHandler());
+
+	// api router
+	const ApiRouter = Router().use(UserRouter);
+
+	app.use(/^(\/backend?.*)$/, ApiRouter);
 	app.listen(3000);
 }
 main();
