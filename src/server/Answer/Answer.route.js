@@ -9,8 +9,6 @@ const { Answer } = require('./Answer.entity');
  * 	- get: returns all answers
  * - route '/:id'
  *  - get: get the answer by id
-  * - route '/:question_id'
- *  - get: gets all answers to a question
  */
 const AnswerRouter = Router('/answer');
 
@@ -25,9 +23,6 @@ AnswerRouter.route('/:id')
      let answer = await Answer.findByPk(req.params.id);
      res.json(answer);
  })
-
-//Needs implementing
-AnswerRouter.route('/:question_id')
 
 module.exports = {
  AnswerRouter,
