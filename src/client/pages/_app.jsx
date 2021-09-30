@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../styles/about.css'
 
 // This is the main application fot the next app
 function MyApp({ Component, pageProps }) {
