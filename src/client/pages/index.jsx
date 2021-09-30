@@ -12,6 +12,8 @@ export default function HomePage() {
 				}}>
 				{count}
 			</button>
+
+			{/* the next link component should be used for navigation */}
 			<Link href='/about'>
 				<a>About</a>
 			</Link>

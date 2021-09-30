@@ -6,7 +6,6 @@ async function main() {
 	const nextApp = next({
 		dev: true,
 		dir: './src/client',
-		conf: { basePath: '/ui' },
 	});
 	await nextApp.prepare();
 
@@ -14,12 +13,7 @@ async function main() {
 	const app = express();
 
 	// add next as ui route handler
-	app.get('/ui/', nextApp.getRequestHandler());
-	app.get('/ui/*', nextApp.getRequestHandler());
-	// redirect to ui
-	app.get('/', (req, res) => {
-		res.redirect('/ui');
-	});
+	app.get(/^((?!\/api).)*$/, nextApp.getRequestHandler());
 
 	// listen on port
 	app.listen(3000);
