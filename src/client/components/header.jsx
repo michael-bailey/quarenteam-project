@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { height } from 'dom-helpers';
+import LoggedOut from './loggedout';
+import LoggedIn from './loggedin';
 
 export default function Header(props) {  
     return (
@@ -19,7 +21,7 @@ export default function Header(props) {
                         <a className="nav-link" href="/about">Profile</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link btn text-danger" href="/api/auth/logout">Logout</a>
+                        {props.user ? <LoggedIn/> : <LoggedOut/>}
                     </li>
                     </ul>
                 </div>

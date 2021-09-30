@@ -13,12 +13,12 @@ export default function HomePage() {
 	if (user) {
 		return (
 			<>
-		  		<Header/>
-				  <div class="h-100 row align-items-center">	
-		  				<h4 class="">Welcome {user.name}!</h4>
+		  		<Header user={user}/>
+				  <div className="h-100 row align-items-center">	
+		  				<h4 className="">Welcome {user.name}!</h4>
 				</div>
 		  	</>
 		);
 	  }
-	  return <a href="/api/auth/login">Login</a>;
+	  return <Header/>
 	};
