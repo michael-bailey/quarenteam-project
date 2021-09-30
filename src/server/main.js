@@ -33,7 +33,7 @@ async function main() {
 	// api router
 	const ApiRouter = Router().use(UserRouter);
 
-	// app.use(/^(\/backend?.*)$/, ApiRouter);
+	app.use(/^(\/backend?.*)$/, ApiRouter);
 	app.listen(3000);
 }
 main();
