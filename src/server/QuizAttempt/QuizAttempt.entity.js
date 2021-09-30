@@ -10,7 +10,7 @@ QuizAttempt.init(
 );
 
 module.exports = {
-	Quiz,
+	QuizAttempt,
 };
 
 //TODO: add relationships
