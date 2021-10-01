@@ -16,7 +16,7 @@ QuizAttempt.belongsTo(Quiz);
 Quiz.hasMany(Question);
 Question.belongsTo(Quiz);
 
-Question.hasMany(Answers);
+Question.hasMany(Answer);
 Answer.belongsTo(Question);
 
 module.exports = {
