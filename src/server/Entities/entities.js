@@ -1,8 +1,11 @@
 const { User } = require('../User/User.entity');
 const { QuizAttempt } = require('../QuizAttempt/QuizAttempt.entity');
-const { Quiz } = require('../Quiz/Quiz.entity');
-const { Question } = require('../Question/Question.entity');
+
 const { Answer } = require('../Answer/Answer.entity');
+const { Question } = require('../Question/Question.entity');
+const sequelize = require('../sequelize');
+const { Quiz } = require('../Quiz/Quiz.entity');
+
 
 User.hasMany(QuizAttempt);
 QuizAttempt.belongsTo(User);
@@ -19,7 +22,10 @@ Answer.belongsTo(Question);
 module.exports = {
 	User,
 	QuizAttempt,
-	Quiz,
 	Question,
-	Answer
+	Answer,
+	sequelize,
+	Quiz,
+
+
 };

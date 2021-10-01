@@ -4,7 +4,8 @@
 	"description": "team quiz project",
 	"main": "src/server/main.js",
 	"scripts": {
-		"start": "node ./src/server/main.js"
+		"start": "node ./src/server/main.js",
+		"init:db": "node ./src/server/scripts/initQuestions.js"
 	},
 	"keywords": [
 		"none"
@@ -19,10 +20,11 @@
 		"express": "^4.17.1",
 		"mysql2": "^2.3.0",
 		"next": "^11.1.2",
-		"node-sass": "^4.14.1",
+		"node-fetch": "^3.0.0",
 		"react": "^17.0.2",
 		"react-bootstrap": "^2.0.0-rc.0",
 		"react-dom": "^17.0.2",
+		"sass": "^1.42.1",
 		"sequelize": "^6.6.5",
 		"sqlite3": "^5.0.2"
 	}
