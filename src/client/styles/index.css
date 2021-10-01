@@ -1,0 +1,42 @@
+h1 {
+    font-weight: bold; 
+}
+
+svg {
+    color: white;
+}
+
+.btn:hover, .btn:focus, .btn:active:focus, .btn.active:focus{
+    box-shadow:none;
+}
+
+.btn {
+    font-weight: bold; 
+}
+
+.shadow-custom {
+    box-shadow: 6px 6px;
+}
+
+.horizontal-scrollable > .row  {
+    overflow-x: scroll;
+} 
+
+.question {
+    width: 400px;
+}
+
+.horizontal-scrollable ::-webkit-scrollbar {
+    width: 1em;
+}
+   
+.horizontal-scrollable ::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    border: solid #073B4C;
+    padding: 1rem;
+}
+   
+.horizontal-scrollable ::-webkit-scrollbar-thumb {
+    background-color: #073B4C;
+    border-radius: 1rem;
+}
