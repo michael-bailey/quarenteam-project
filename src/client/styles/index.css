@@ -8,42 +8,35 @@ svg {
 
 .btn:hover, .btn:focus, .btn:active:focus, .btn.active:focus{
     box-shadow:none;
-    color: white;
 }
 
 .btn {
     font-weight: bold; 
 }
 
-.btn-danger,
-.btn-success,
-.btn-warning,
-.btn-secondary,
-.btn-primary {
-    color: white;
-}
-
-.shadow-1 {
+.shadow-custom {
     box-shadow: 6px 6px;
 }
 
-.shadow-2 {
-    box-shadow: 6px 6px #6e757c;
+.horizontal-scrollable > .row  {
+    overflow-x: scroll;
+} 
+
+.question {
+    width: 400px;
 }
 
-.white {
-    background-color: white;
-    z-index: 10000;
-    height: 610px;
+.horizontal-scrollable ::-webkit-scrollbar {
+    width: 1em;
 }
-
-#slide {
-    animation: slide ease 0.2s forwards;
-    animation-delay: 0.5;
+   
+.horizontal-scrollable ::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    border: solid #073B4C;
+    padding: 1rem;
 }
-
-@keyframes slide {
-    0% {transform: translate(150px, 0px);}
-    50% {transform: translate(-150px, 0px);}
-    100% {transform: translate(0px, 0px);}
+   
+.horizontal-scrollable ::-webkit-scrollbar-thumb {
+    background-color: #073B4C;
+    border-radius: 1rem;
 }
