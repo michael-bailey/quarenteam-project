@@ -9,11 +9,12 @@ export default function AboutPage() {
 
 			<div class="row p-5">
           		<div class="col">
-					<div class="d-grid gap-2">
-          				<div id="score-1" class="text-center text-white p-3 home-score" >100%</div>
-						<div id="score-2" class="text-center text-white p-3 home-score" >100%</div>
-						<div id="score-3" class="text-center text-white p-3 home-score" >100%</div>
-						<div id="score-4" class="text-center text-white p-3 home-score" >100%</div>		
+					<div class="d-grid gap-2 overflow-auto all-scores">
+          				<div id="score-1" class="text-center text-white p-3 home-score">100%</div>
+						<div id="score-2" class="text-center text-white p-3 home-score">89%</div>
+						<div id="score-3" class="text-center text-white p-3 home-score">60%</div>
+						<div id="score-4" class="text-center text-white p-3 home-score">58%</div>
+						{/* <div class="text-center text-white p-3 home-score score-black" >30%</div> */}
         			</div>
           		</div>
 			</div>
