@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Header from '../components/header'
+import { useUser } from '@auth0/nextjs-auth0';
 
 export default function AboutPage() {
+	const { user } = useUser();
 	return (
 		<>
-			<Header pageName="Profile"/>
+			<Header user={user}/>
 			<div class="row p-5">
           		<div class="col">
 					<div class="d-grid gap-2">

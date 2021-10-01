@@ -9,13 +9,13 @@ export default function HomePage() {
 
 	if (isLoading) return <div>Loading...</div>;
 	if (error) return <div>{error.message}</div>;
-
+	
 	if (user) {
 		return (
 			<>
 		  		<Header user={user}/>
-				  <div className="h-100 row align-items-center">	
-		  				<h4 className="">Welcome {user.name}!</h4>
+				  <div className="h-100 row">	
+		  				<h4 className="col text-center position-absolute top-50 start-25">Welcome {user.name}!</h4>
 				</div>
 		  	</>
 		);
