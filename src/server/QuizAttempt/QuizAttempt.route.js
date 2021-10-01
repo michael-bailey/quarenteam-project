@@ -32,12 +32,12 @@ QuizAttemptRouter.route('/quiz_attempt/')
 
 QuizAttemptRouter.route('/quiz_attempt/email/:email').get(async (req, res) => {
 	const attempts = await QuizAttempt.findAll({
-		where: { email: req.body.email },
+		where: { email: req.params.email },
 	});
-	return attempts;
+	res.json(attempts);
 });
 
-QuizAttemptRouter.route('/quiz_attempt/:id')
+QuizAttemptRouter.route('/quiz_attempt/id/:id')
 	.get(async (req, res) => {
 		const attempt = await QuizAttempt.create({ correctCount: 2 });
 		console.log(attempt);
