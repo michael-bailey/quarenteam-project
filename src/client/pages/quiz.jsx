@@ -3,16 +3,12 @@ import Link from 'next/link';
 import Header from '../components/header'
 import { useUser } from '@auth0/nextjs-auth0';
 
-
 export async function getStaticProps(context) {
-  // let questions = []
-  // try {
-  let response = await fetch('http://localhost:3000/backend/question/', {
-      method: 'GET', 
-      // mode: 'cors', 
-    })
-  let questions = await response.json();
-  // } catch {}
+  let questions = []
+  try {
+    let response = await fetch('http://localhost:3000/backend/question/')
+    questions = await response.json();
+  } catch {}
   
   return {
     props: { questions },
@@ -20,14 +16,9 @@ export async function getStaticProps(context) {
 }
 
 export default function QuizPage(props) {
-  console.log(props.questions)
     const { user } = useUser();
-    // const [answers, setAnswers] = useState(new Array(props.questions.length).fill(null)); 
-
-    // let questions = props.questions
-   const [answers, setAnswers] = useState(new Array(14)) 
-
-    let questions = new Array(14).fill("why? ")
+    const [answers, setAnswers] = useState(new Array(props.questions.length).fill(null)); 
+    let questions = props.questions
 
     questions = questions.map((text, index) => {
       return <Question key={index} number={index} text={text} oldAnswer={answers[index]}
