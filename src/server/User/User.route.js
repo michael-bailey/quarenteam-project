@@ -13,9 +13,9 @@ const { User } = require('./User.entity');
  * 	- patch: update user by id
  *  - delete: delete a user by id
  */
-const UserRouter = Router('/user');
+const UserRouter = Router();
 
-UserRouter.route('/')
+UserRouter.route('/user/')
 	.get(async (req, res) => {
 		const users = await User.findAll();
 		res.json(users);
@@ -25,7 +25,7 @@ UserRouter.route('/')
 		res.json(user);
 	});
 
-UserRouter.route('/:id')
+UserRouter.route('/user/:id')
 	.get(async (req, res) => {
 		let user = await User.findByPk(req.params.id);
 		res.json(user);
@@ -36,6 +36,9 @@ UserRouter.route('/:id')
 	.delete(async (req, res) => {
 		User.destroy({ where: { id: req.params.id } });
 	});
+
+console.log('user stack');
+console.table(UserRouter.stack);
 
 module.exports = {
 	UserRouter,
