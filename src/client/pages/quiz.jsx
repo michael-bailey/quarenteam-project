@@ -11,7 +11,7 @@ export default function QuizPage() {
 
     let questions = new Array(12).fill("what is the point?")
     questions = questions.map((text, index) => {
-      return <Question number={index} text={text} isSelected={index === questionNo} 
+      return <Question number={index} text={text} isSelected={index === questionNo} answer={answers[index]}
         onPick={(answerNumber) => {
           let oldAnswers = answers
           oldAnswers[index] = answerNumber
@@ -84,7 +84,7 @@ function Question(props) {
         <p class={text}>{props.text}</p>
         <div class="d-grid gap-2">
           {buttonTypes.map((type, index) => {
-            return <button type="button" class={"btn p-3 btn-" + (props.isSelected ? type : "secondary")} disabled={!props.isSelected} onClick={() => {props.onPick(index)}}>Option {index+1}</button>
+            return <button type="button" class={"btn p-3 btn-" + (props.answer === index ? "" : "outline-") + (props.isSelected ? type : "secondary")} disabled={!props.isSelected} onClick={() => {props.onPick(index)}}>Option {index+1}</button>
           })}
         </div>
       </div>

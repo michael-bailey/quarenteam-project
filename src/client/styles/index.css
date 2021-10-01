@@ -6,13 +6,21 @@ svg {
     color: white;
 }
 
-.btn:focus, .btn:active:focus, .btn.active:focus{
+.btn:hover, .btn:focus, .btn:active:focus, .btn.active:focus{
     box-shadow:none;
+    color: white;
 }
 
 .btn {
-    font-weight: bold;
-    color: white !important; 
+    font-weight: bold; 
+}
+
+.btn-danger,
+.btn-success,
+.btn-warning,
+.btn-secondary,
+.btn-primary {
+    color: white;
 }
 
 .shadow-1 {
@@ -29,10 +37,10 @@ svg {
     height: 610px;
 }
 
-/* #slide {
+#slide {
     animation: slide ease 0.2s forwards;
     animation-delay: 0.5;
-} */
+}
 
 @keyframes slide {
     0% {transform: translate(150px, 0px);}
