@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { height } from 'dom-helpers';
+import Header from '../components/header'
+import { useUser } from '@auth0/nextjs-auth0';
 
 export default function QuizPage() {
     const [questionNo, setQuestionNo] = useState(11);
+    const { user } = useUser();
 
     let questions = new Array(12).fill("what is the point?")
     questions = questions.map((text, index) => {
@@ -12,8 +15,7 @@ export default function QuizPage() {
     
     return (
 		<>
-			<h1 class="text-center pt-5">Quiz Name</h1>
-      <a class="text-center" href="/api/auth/logout">Logout</a>
+			<Header user={user}/>
         <div class="row p-5">
           <div class="col">
             {questions[questionNo === 0 ? questions.length - 1 : questionNo - 1]}

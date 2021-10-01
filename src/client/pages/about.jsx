@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { useUser } from '@auth0/nextjs-auth0'
+import Header from '../components/header'
+import { useUser } from '@auth0/nextjs-auth0';
 import { useEffect } from 'react';
 
 export default function AboutPage() {
@@ -46,11 +47,11 @@ export default function AboutPage() {
 
 	return (
 		<>
-			<h1 class="text-center pt-5">{user.name}</h1>
-
-			<h1 class="text-center pt-5">Quaranteam Quiz</h1>
-			<a class="text-center" href="/api/auth/logout">Logout</a>
+			<Header user={user}/>
 			<div class="row p-5">
+				<div>
+					<h1>Test Results</h1>
+				</div>
           		<div class="col">
 					<div id="all-scores" class="d-grid gap-2 overflow-auto">
           				<div id="score-1" class="text-center text-white p-3 home-score">N/A</div>
@@ -63,13 +64,8 @@ export default function AboutPage() {
 
 			<div class="row px-5">
           		<div class="col d-grid">
-				  	<Link href='/' passHref>
-            			<a type="button" class="btn btn-warning p-3">Log Out</a>
-					</Link>
-          		</div>
-          		<div class="col d-grid">
 				  	<Link href='/quiz' passHref>
-            			<a type="button" class="btn btn-dark p-3">Take Quiz</a>
+            			<a type="button" class="btn btn-warning p-3">Take Quiz</a>
 					</Link>
           		</div>
         	</div>
