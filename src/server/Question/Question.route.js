@@ -21,11 +21,11 @@ function questionToObject(question) {
 
 const QuestionRouter = Router();
 
-QuestionRouter.route('/')
-	.get(async (req, res) => {
-
-		res.json("hello");
-	})
+QuestionRouter.route('/question/').get(async (req, res) => {
+	const questions = await Question.findAll();
+	// res.json(questions.map((question) => questionToObject(question)))
+	res.json("hello")
+});
 
 QuestionRouter.route('/question/:id').get(async (req, res) => {
 	let question = await Question.findByPk(req.params.id);

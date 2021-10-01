@@ -9,7 +9,7 @@ export async function getStaticProps(context) {
   // try {
   let response = await fetch('http://localhost:3000/backend/question/', {
       method: 'GET', 
-      mode: 'cors', 
+      // mode: 'cors', 
     })
   let questions = await response.json();
   // } catch {}
