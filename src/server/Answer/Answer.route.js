@@ -10,20 +10,18 @@ const { Answer } = require('./Answer.entity');
  * - route '/:id'
  *  - get: get the answer by id
  */
-const AnswerRouter = Router('/answer');
+const AnswerRouter = Router();
 
-AnswerRouter.route('/')
- .get(async (req, res) => {
-     const answers = await Answer.findAll();
-     res.json(answers);
- })
+AnswerRouter.route('/answer/').get(async (req, res) => {
+	const answers = await Answer.findAll();
+	res.json(answers);
+});
 
-AnswerRouter.route('/:id')
- .get(async (req, res) => {
-     let answer = await Answer.findByPk(req.params.id);
-     res.json(answer);
- })
+AnswerRouter.route('/answer/:id').get(async (req, res) => {
+	let answer = await Answer.findByPk(req.params.id);
+	res.json(answer);
+});
 
 module.exports = {
- AnswerRouter,
+	AnswerRouter,
 };
