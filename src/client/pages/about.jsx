@@ -49,9 +49,7 @@ export default function AboutPage() {
 		<>
 			<Header user={user}/>
 			<div class="row p-5">
-				<div>
-					<h1>Test Results</h1>
-				</div>
+					<h1 class="text-center pb-5">Test Results</h1>
           		<div class="col">
 					<div id="all-scores" class="d-grid gap-2 overflow-auto">
           				<div id="score-1" class="text-center text-white p-3 home-score">N/A</div>
@@ -65,7 +63,7 @@ export default function AboutPage() {
 			<div class="row px-5">
           		<div class="col d-grid">
 				  	<Link href='/quiz' passHref>
-            			<a type="button" class="btn btn-warning p-3">Take Quiz</a>
+            			<a type="button" class="btn btn-primary p-3">Take Quiz</a>
 					</Link>
           		</div>
         	</div>
