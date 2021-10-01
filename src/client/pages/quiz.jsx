@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { height } from 'dom-helpers';
 import Header from '../components/header'
 import { useUser } from '@auth0/nextjs-auth0';
+
 
 export default function QuizPage() {
     const data = getData()
@@ -22,12 +22,13 @@ export default function QuizPage() {
     return (
 		<>
       <Header user={user}/>
-			<h1 class="text-center pt-5">Quiz Name</h1>
+			<h1 class="text-center py-5">SDLC Quiz</h1>
         <div class="container horizontal-scrollable pb-5">
            <div class="row pb-5 flex-row flex-nowrap">
                 {questions.map((question) => <div class="col">{question}</div>)}
             </div>
         </div>
+
         <div class="row px-5">
           <div class="col d-grid">
             <Link href='/about' passHref>
@@ -45,6 +46,7 @@ export default function QuizPage() {
               })
             }}>Complete</button>
           </div>
+
         </div>
 		</>
 	);
