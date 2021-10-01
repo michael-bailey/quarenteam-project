@@ -43,7 +43,7 @@ export default function QuizPage() {
                 }
               })
               alert("You scored: " + total)
-              fetch('http://localhost:3000/backend/quizAttempt', {
+              fetch('http://localhost:3000/backend/quiz_attempt/', {
                 method: "POST",
                 body: JSON.stringify({
                   email: user.email,
