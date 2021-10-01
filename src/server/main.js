@@ -7,6 +7,8 @@ const sequelize = require('./sequelize');
 
 const { UserRouter } = require('./User/User.route');
 const { QuizAttemptRouter } = require('./QuizAttempt/QuizAttempt.route');
+const { QuestionRouter } = require('./Question/Question.route');
+const { AnswerRouter } = require('./Answer/Answer.route');
 
 dotenv.config();
 
@@ -32,7 +34,7 @@ async function main() {
 	app.get(/^((?!\/backend).)*$/, nextApp.getRequestHandler());
 
 	// api router
-	const ApiRouter = Router().use(UserRouter).use(QuizAttemptRouter);
+	const ApiRouter = Router().use(UserRouter).use(QuizAttemptRouter).use(QuestionRouter).use(AnswerRouter);
 
 	app.use('/backend/', ApiRouter);
 
