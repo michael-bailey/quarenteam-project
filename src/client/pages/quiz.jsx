@@ -41,8 +41,9 @@ export default function QuizPage() {
                 if (answer === data.correct_answers[index]) {
                   total += 1
                 }
-                console.log(total)
               })
+              alert("You scored: " + total)
+              window.location = '/about'
             }}>Complete</button>
           </div>
         </div>
