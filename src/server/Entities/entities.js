@@ -6,7 +6,6 @@ const { Question } = require('../Question/Question.entity');
 const sequelize = require('../sequelize');
 const { Quiz } = require('../Quiz/Quiz.entity');
 
-
 User.hasMany(QuizAttempt);
 QuizAttempt.belongsTo(User);
 
@@ -16,7 +15,7 @@ QuizAttempt.belongsTo(Quiz);
 Quiz.hasMany(Question);
 Question.belongsTo(Quiz);
 
-Question.hasMany(Answers);
+Question.hasMany(Answer);
 Answer.belongsTo(Question);
 
 module.exports = {
@@ -26,6 +25,4 @@ module.exports = {
 	Answer,
 	sequelize,
 	Quiz,
-
-
 };

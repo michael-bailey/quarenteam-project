@@ -23,8 +23,8 @@ QuizAttemptRouter.route('/quiz_attempt/')
 	})
 	.post(async (req, res) => {
 		const attempt = await QuizAttempt.create({
-			correctCount: 0,
-			userId: req.body.userId,
+			correctCount: req.body.correctCount,
+			userId: req.body.email,
 		});
 		console.table(attempt);
 		res.json(attempt);
