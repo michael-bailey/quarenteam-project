@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Header from '../components/header'
 import { useUser } from '@auth0/nextjs-auth0';
 
-
 export default function QuizPage() {
     const data = getData()
     const { user } = useUser();
@@ -44,6 +43,13 @@ export default function QuizPage() {
                 }
               })
               alert("You scored: " + total)
+              fetch('http://localhost:3000/backend/quizAttempt', {
+                method: "POST",
+                body: JSON.stringify({
+                  email: user.email,
+                  correctCount: total,
+                }),
+              })
               window.location = '/about'
             }}>Complete</button>
           </div>
