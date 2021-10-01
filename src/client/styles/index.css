@@ -22,3 +22,20 @@ svg {
 .shadow-2 {
     box-shadow: 6px 6px #6e757c;
 }
+
+.white {
+    background-color: white;
+    z-index: 10000;
+    height: 610px;
+}
+
+/* #slide {
+    animation: slide ease 0.2s forwards;
+    animation-delay: 0.5;
+} */
+
+@keyframes slide {
+    0% {transform: translate(150px, 0px);}
+    50% {transform: translate(-150px, 0px);}
+    100% {transform: translate(0px, 0px);}
+}
