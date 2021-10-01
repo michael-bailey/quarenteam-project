@@ -24,11 +24,18 @@ QuizAttemptRouter.route('/quiz_attempt/')
 	.post(async (req, res) => {
 		const attempt = await QuizAttempt.create({
 			correctCount: req.body.correctCount,
-			userId: req.body.email,
+			email: req.body.email,
 		});
 		console.table(attempt);
 		res.json(attempt);
 	});
+
+QuizAttemptRouter.route('/quiz_attempt/email/:email').get(async (req, res) => {
+	const attempts = await QuizAttempt.findAll({
+		where: { email: req.body.email },
+	});
+	return attempts;
+});
 
 QuizAttemptRouter.route('/quiz_attempt/:id')
 	.get(async (req, res) => {
