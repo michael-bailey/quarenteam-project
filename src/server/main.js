@@ -3,13 +3,12 @@ const { Router } = require('express');
 const express = require('express');
 const next = require('next');
 const dotenv = require('dotenv');
-
-dotenv.config()
-
 const sequelize = require('./sequelize');
+
 const { UserRouter } = require('./User/User.route');
-const { QuestionRouter } = require('./Question/Question.route');
-const { AnswerRouter } = require('./Answer/Answer.route');
+const { QuizAttemptRouter } = require('./QuizAttempt/QuizAttempt.route');
+
+dotenv.config();
 
 async function main() {
 	// next js setup
@@ -33,9 +32,12 @@ async function main() {
 	app.get(/^((?!\/backend).)*$/, nextApp.getRequestHandler());
 
 	// api router
-	const ApiRouter = Router().use(UserRouter).use(QuestionRouter).use(AnswerRouter);
+	const ApiRouter = Router().use(UserRouter).use(QuizAttemptRouter);
 
-	app.use(/^(\/backend?.*)$/, ApiRouter);
+	app.use('/backend/', ApiRouter);
+
+	console.log('express router');
+	console.table(app._router.stack);
 	app.listen(3000);
 }
 main();
