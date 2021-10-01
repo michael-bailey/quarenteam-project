@@ -13,6 +13,7 @@ export default function QuizPage() {
     return (
 		<>
 			<h1 class="text-center pt-5">Quiz Name</h1>
+      <a class="text-center" href="/api/auth/logout">Logout</a>
         <div class="row p-5">
           <div class="col">
             {questions[questionNo === 0 ? questions.length - 1 : questionNo - 1]}
@@ -26,7 +27,9 @@ export default function QuizPage() {
         </div>
         <div class="row px-5">
           <div class="col d-grid">
-            <button type="button" class="btn btn-dark p-3">Abandon</button>
+            <Link href='/about' passHref>
+              <a class="btn btn-dark p-3">Abandon</a>
+            </Link>
           </div>
           <div class="col d-grid">
             <button type="button" class="btn btn-primary p-3">Complete</button>
