@@ -6,7 +6,7 @@ QuizAttempt.init(
 	{
 		correctCount: DataTypes.INTEGER,
 	},
-	{ sequelize, modelName: 'quiz' }
+	{ sequelize, modelName: 'quiz_attempt' }
 );
 
 module.exports = {
